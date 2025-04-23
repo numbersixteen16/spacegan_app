@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SpaceGAN</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Home</a> |
+        <a href="{{ url_for('guide') }}">Guide</a> |
+        <a href="{{ url_for('about') }}">About</a> |
+        {% if 'user' in session %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+    </nav>
+
+    <!-- Content Placeholder -->
+    {% block content %}{% endblock %}
+</body>
+
+</html>

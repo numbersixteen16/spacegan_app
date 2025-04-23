@@ -1,0 +1,41 @@
+<h2>About SpaceGAN</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About This Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f0f0f0;
+            color: #222;
+        }
+
+        h1 {
+            color: #0066cc;
+        }
+
+        p {
+            max-width: 800px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>About This Project</h1>
+    <p>
+        This web app is part of a thesis project focused on enhancing the quality of space and astronomy-related images
+        using a GAN-based deep learning model.
+        The goal is to provide users with an easy way to improve their images through a simple, accessible interface.
+        The enhancement model is lightweight and optimized to run on limited hardware resources.
+    </p>
+    <p>
+        Created by: <strong>Huzaifa Mazhar</strong><br>
+        Powered by: <strong>PyTorch, Flask, and HTML/CSS</strong>
+    </p>
+    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</body>
+
+</html>

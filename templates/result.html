@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enhanced Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .images img {
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #005ce6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0041b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Original vs Enhanced Image</h2>
+    <div class="images">
+        <div>
+            <p><strong>Original</strong></p>
+            <img src="{{ url_for('static', filename=original.split('static/')[-1]) }}">
+        </div>
+        <div>
+            <p><strong>Enhanced</strong></p>
+            <img src="{{ url_for('static', filename=enhanced.split('static/')[-1]) }}">
+        </div>
+    </div>
+    <a class="btn" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+
+</html>
