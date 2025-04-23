@@ -1,1 +1,89 @@
-<h2>Register Page</h2>
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .auth-container {
+        max-width: 400px;
+        margin: 80px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        color: #333;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .auth-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #0040aa;
+    }
+
+    .auth-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .auth-container input {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .auth-container .btn {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .auth-container .btn:hover {
+        background-color: #218838;
+    }
+
+    .auth-container p {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.9rem;
+    }
+
+    .auth-container a {
+        color: #005ce6;
+        text-decoration: none;
+    }
+
+    .auth-container a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="auth-container">
+    <h2>📝 Register</h2>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul style="color: red; list-style: none; padding: 0; margin-bottom: 15px;">
+        {% for msg in messages %}
+        <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('register') }}">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+        <button type="submit" class="btn">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">_

@@ -1,41 +1,67 @@
-<h2>About SpaceGAN</h2>
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>About This Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-            background-color: #f0f0f0;
-            color: #222;
-        }
+{% block content %}
+<style>
+    .about-container {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        h1 {
-            color: #0066cc;
-        }
+    .about-container h1 {
+        color: #0040aa;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        p {
-            max-width: 800px;
-            line-height: 1.6;
-        }
-    </style>
-</head>
+    .about-container p {
+        line-height: 1.8;
+        font-size: 18px;
+        color: #333;
+    }
 
-<body>
-    <h1>About This Project</h1>
+    .about-container strong {
+        color: #005ce6;
+    }
+
+    .btn {
+        display: block;
+        width: fit-content;
+        margin: 30px auto 0;
+        padding: 10px 25px;
+        background-color: #005ce6;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #003d99;
+    }
+</style>
+
+<div class="about-container">
+    <h1>📷 About SpaceGAN</h1>
     <p>
-        This web app is part of a thesis project focused on enhancing the quality of space and astronomy-related images
-        using a GAN-based deep learning model.
-        The goal is to provide users with an easy way to improve their images through a simple, accessible interface.
-        The enhancement model is lightweight and optimized to run on limited hardware resources.
+        <strong>SpaceGAN</strong> is a deep learning-powered web application designed to enhance space and astronomy
+        images using Generative Adversarial Networks (GANs).
+        The project is part of a thesis by <strong>Huzaifa Mazhar</strong> and aims to make powerful image enhancement
+        accessible to the public through an intuitive, lightweight platform.
     </p>
     <p>
-        Created by: <strong>Huzaifa Mazhar</strong><br>
-        Powered by: <strong>PyTorch, Flask, and HTML/CSS</strong>
+        Whether you're a space enthusiast, a student, or a curious user with low-resolution images, SpaceGAN allows you
+        to give your images a meaningful quality boost with just a few clicks.
+        The tool is optimized to work on limited hardware and continues to evolve based on research and real-world use.
     </p>
-    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
-</body>
-
-</html>
+    <p>
+        This application is built using <strong>Flask</strong> for the backend and <strong>PyTorch</strong> for AI
+        modeling. All development was done using open-source tools to ensure free and fair access.
+    </p>
+    <a class="btn" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</div>
+{% endblock %}

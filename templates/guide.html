@@ -1,38 +1,61 @@
-<h2>Guide</h2>
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title>How to Use</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
+{% block content %}
+<style>
+    .guide-container {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        h1 {
-            color: #0040aa;
-        }
+    .guide-container h1 {
+        color: #0040aa;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        ul {
-            line-height: 1.8;
-        }
-    </style>
-</head>
+    .guide-container ul {
+        line-height: 2;
+        padding-left: 20px;
+        font-size: 18px;
+    }
 
-<body>
-    <h1>How to Use the Image Enhancer</h1>
+    .guide-container li::marker {
+        color: #005ce6;
+    }
+
+    .btn {
+        display: block;
+        width: fit-content;
+        margin: 30px auto 0;
+        padding: 10px 25px;
+        background-color: #005ce6;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #003d99;
+    }
+</style>
+
+<div class="guide-container">
+    <h1>🚀 How to Use the SpaceGAN Image Enhancer</h1>
     <ul>
-        <li>Go to the Dashboard (Home Page)</li>
-        <li>Click “Choose File” to upload your low-quality image</li>
-        <li>Click the “Enhance Image” button</li>
-        <li>Wait a few seconds as the model processes the image</li>
-        <li>View the enhanced image side-by-side with the original</li>
-        <li>Optionally download or take a screenshot</li>
+        <li>Go to the <strong>Dashboard</strong> from the navigation bar.</li>
+        <li>Click <strong>“Choose File”</strong> and upload your low-resolution space image.</li>
+        <li>Click the <strong>“Upload & Enhance”</strong> button to process the image.</li>
+        <li>Wait a few seconds — the image will be enhanced using our AI model.</li>
+        <li>You will see a side-by-side comparison of the <strong>Original</strong> and <strong>Enhanced</strong>
+            images.</li>
+        <li>You can <strong>download</strong> or <strong>save</strong> the enhanced result manually.</li>
     </ul>
-    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
-</body>
-
-</html>
+    <a class="btn" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</div>
+{% endblock %}
